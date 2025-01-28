@@ -9,11 +9,24 @@
 </head>
 <body>
     
-    <img src="{{ url_for('static', filename='images/' + imagem) }}" alt="Imagem" style="width: 200px; margin: 10px;">
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Início</a></li>
+                <li><a href="/sobre">Sobre</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <div class="curiosidades">
+    <main class="curiosidades">
+        <h1>Curiosidades sobre Basquete</h1>
         <p>{{texto_curiosidade}}</p>
-    </div>
+        <img src="{{ url_for('static', filename='images/' + imagem) }}" alt="Imagem" style="width: 200px; margin: 10px;">
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Basquete Inc.</p>
+    </footer>
 
 </body>
 </html>
