@@ -22,11 +22,27 @@ curiosidades_basquete = [
     "15. O basquete no espaço: Em 1997, astronautas americanos jogaram uma partida de basquete a bordo da estação espacial Mir. Eles usaram um minibasketball para fazer a atividade em microgravidade."
 ]
 
+cores_fundo = [
+    "#2C3E50",
+    "#ECF0F1",
+    "#1ABC9C",
+    "#34495E",
+    "#95A5A6",
+    "#E74C3C",
+    "#F39C12",
+    "#8E44AD",
+    "#3498DB",
+    "#BDC3C7"
+]
+
 @app.route('/')
 def primeiroweb():
 
     #escolhendo curiosidade
     curiosidade = rd.choice(curiosidades_basquete)
+
+    #escolhendo cor
+    cor = rd.choice(cores_fundo)
 
     # CRIANDO UMA ROTA
     pasta_imagens = os.path.join(app.static_folder, 'images')
@@ -35,7 +51,7 @@ def primeiroweb():
     # Escolhe uma imagem aleatória
     imagem_aleatoria = rd.choice(imagens)
     # Retorna para o template, passando o nome da imagem aleatória
-    return render_template('index.html', imagem=imagem_aleatoria, texto_curiosidade=curiosidade)
+    return render_template('index.html', imagem=imagem_aleatoria, texto_curiosidade=curiosidade, cor_fundo=cor)
 
 @app.route('/sobre')
 def sobre():
