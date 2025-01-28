@@ -37,6 +37,11 @@ def primeiroweb():
     # Retorna para o template, passando o nome da imagem aleatória
     return render_template('index.html', imagem=imagem_aleatoria, texto_curiosidade=curiosidade)
 
+@app.route('/sobre')
+def sobre():
+    # Você pode passar algumas informações para o template sobre a página "SOBRE".
+    return render_template('sobre.html')
+
 
 # Executa o app
 if __name__ == '__main__':
