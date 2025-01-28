@@ -1,0 +1,75 @@
+/* Geral */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* Centralizando todo o conteúdo */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Estilo da imagem */
+img {
+    width: 100%;
+    max-width: 400px;
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Título da página */
+h1 {
+    font-size: 2.5rem;
+    color: #4CAF50;
+    margin-bottom: 20px;
+}
+
+/* Estilo do bloco de curiosidades */
+.curiosidades {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.curiosidades p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #555;
+}
+
+/* Melhorando a responsividade */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    
+    .container {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    img {
+        max-width: 100%;
+    }
+
+    .curiosidades p {
+        font-size: 1rem;
+    }
+}
