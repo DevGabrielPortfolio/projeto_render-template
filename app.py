@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, redirect, url_for
 import random as rd
 import os
 
@@ -41,6 +41,8 @@ lista_imagens = [
     "imagem3.jpg"
 ]
 
+frasesCadastro = []
+
 @app.route('/')
 def primeiroweb():
 
@@ -54,12 +56,28 @@ def primeiroweb():
     imagem = rd.choice(lista_imagens)
 
     # Retorna para o template, passando o nome da imagem aleatória
-    return render_template('index.html', imagem=imagem, texto_curiosidade=curiosidade, cor_fundo=cor)
+    return render_template('index.html', texto_curiosidade=curiosidade, imagem=imagem, cor_fundo=cor)
 
 @app.route('/sobre')
 def sobre():
     # Você pode passar algumas informações para o template sobre a página "SOBRE".
     return render_template('sobre.html')
+
+
+@app.route('/cadastro')
+def cadastro():
+    return render_template('cadastro.html', itens=frasesCadastro)
+
+
+@app.route('/receber', methods=['POST'])
+def receber():
+    frase = request.form['nome']
+    if(frase.lower() == 'limpar'):
+        frasesCadastro.clear()
+    else:
+        frasesCadastro.append(frase)
+
+    return redirect(url_for('cadastro'))
 
 
 # Executa o app
