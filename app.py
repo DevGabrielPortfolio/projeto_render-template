@@ -35,6 +35,12 @@ cores_fundo = [
     "#BDC3C7"
 ]
 
+lista_imagens = [
+    "imagem1.jpg",
+    "imagem2.jpg",
+    "imagem3.jpg"
+]
+
 @app.route('/')
 def primeiroweb():
 
@@ -44,14 +50,11 @@ def primeiroweb():
     #escolhendo cor
     cor = rd.choice(cores_fundo)
 
-    # CRIANDO UMA ROTA
-    pasta_imagens = os.path.join(app.static_folder, 'images')
-    # Lista as imagens na pasta
-    imagens = [img for img in os.listdir(pasta_imagens) if img.endswith(('png', 'jpg', 'jpeg', 'gif'))]
-    # Escolhe uma imagem aleatória
-    imagem_aleatoria = rd.choice(imagens)
+    #escolhendo imagem
+    imagem = rd.choice(lista_imagens)
+
     # Retorna para o template, passando o nome da imagem aleatória
-    return render_template('index.html', imagem=imagem_aleatoria, texto_curiosidade=curiosidade, cor_fundo=cor)
+    return render_template('index.html', imagem=imagem, texto_curiosidade=curiosidade, cor_fundo=cor)
 
 @app.route('/sobre')
 def sobre():
