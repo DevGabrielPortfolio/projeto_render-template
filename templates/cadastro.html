@@ -16,44 +16,7 @@
 
     <title>Cadastro de frases</title>
 
-    <style>
-        header {
-            padding: 10px 0;
-            margin-bottom: 10%;
-        }
-    
-        nav {
-            background-color: #2c3e50;
-        }
-    
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-    
-        nav ul li a {
-            text-decoration: none;
-            font-size: 1.1rem;
-            padding: 2px;
-            transition: color 0.3s ease, transform 0.3s ease;
-        }
-    
-        nav ul li a:hover {
-            color: #1ABC9C;
-            /* Cor de destaque quando passar o mouse */
-            text-decoration: none;
-        }
-    
-        /* Remover o outline e box-shadow ao focar ou passar o mouse */
-        nav ul li a:focus,
-        nav ul li a:hover {
-            outline: none; /* Remove a borda de foco */
-            box-shadow: none; /* Remove a sombra */
-        }
-    </style>
-    
+    <link rel="stylesheet" href="../static/css/cadastro.css">
 
 </head>
 
@@ -62,9 +25,8 @@
     <header>
         <nav>
             <ul>
-                <li><a href="/">Início</a></li>
+                <li><a href="/curiosidades">Início</a></li>
                 <li><a href="/sobre">Sobre</a></li>
-                <li><a href="/cadastro">Cadastro</a></li>
             </ul>
         </nav>
     </header>
