@@ -151,6 +151,13 @@ def receberCor():
 
     return redirect(url_for('cadastroCor'))
 
+
+@app.route('/excluirCor/<cor>', methods=['POST'])
+def excluirCor(cor):
+    if cor in coresCadastro:
+        coresCadastro.remove(cor)
+    return redirect(url_for('cadastroCor'))
+
 # Executa o app
 if __name__ == '__main__':
     app.run(debug=True)

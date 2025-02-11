@@ -64,6 +64,12 @@
                 <div class="card-panel" style="max-width: 300px; height: auto; padding: 10px; background-color: {{item}};">
                     <span class="white-text" style="word-wrap: break-word; display: inline-block; width: 100%;">{{ item
                         }}</span>
+
+                    
+                    <form action="{{ url_for('excluirCor', cor=item) }}" method="POST" style="display: inline;">
+                        <button type="submit" class="btn red">Excluir</button>
+                    </form>
+
                 </div>
                 
             </div>
