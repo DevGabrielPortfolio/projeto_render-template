@@ -46,6 +46,7 @@ lista_imagens = [
 ]
 
 frasesCadastro = []
+coresCadastro = []
 
 
 # Função para salvar usuário
@@ -134,6 +135,21 @@ def receber():
         frasesCadastro.append(frase)
 
     return redirect(url_for('cadastro'))
+
+@app.route('/cadastroCor')
+def cadastroCor():
+    return render_template('cadastro-cor.html', itens=coresCadastro)
+
+@app.route('/receberCor', methods=['POST'])
+def receberCor():
+    corNome = request.form['nomeCor']
+    if(corNome.lower() == 'clear'):
+        coresCadastro.clear()
+    else:
+        coresCadastro.append(corNome)
+        
+
+    return redirect(url_for('cadastroCor'))
 
 # Executa o app
 if __name__ == '__main__':
